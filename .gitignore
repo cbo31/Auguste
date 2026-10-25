@@ -1,0 +1,39 @@
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tools and caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Houdini
+*.hip.bak
+backup/
+*.hiplc.bak
+*.hipnc.bak
+
+# Auguste runtime data (RAG index, logs)
+*.lance/
+*.log
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

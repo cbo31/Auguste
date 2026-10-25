@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <toolshelf name="auguste" label="Auguste">
+    <memberTool name="auguste_start_session"/>
+  </toolshelf>
+
+  <tool name="auguste_start_session" label="Start Session" icon="MISC_python">
+    <helpText><![CDATA[Open the Auguste assistant. Starts the local agent sidecar if it is not running.]]></helpText>
+    <script scriptType="python"><![CDATA[import auguste_houdini
+auguste_houdini.show()
+]]></script>
+  </tool>
+</shelfDocument>

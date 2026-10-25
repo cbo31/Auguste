@@ -1,0 +1,31 @@
+[project]
+name = "auguste"
+version = "0.1.0"
+description = "AI assistant inside Houdini: agent sidecar, RAG and confirmation policy on top of fxhoudinimcp"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fxhoudinimcp==2.28.2",
+    "mcp>=2.3",
+    "starlette>=1.0",
+    "uvicorn[standard]>=0.54",
+]
+
+[project.optional-dependencies]
+# LiteLLM backend for local models (Ollama, LM Studio...). The default backend is Claude Code.
+local = ["litellm>=1.106"]
+dev = ["litellm>=1.106", "pytest>=9", "pytest-asyncio>=1.4", "httpx>=0.28"]
+
+[project.scripts]
+auguste = "auguste.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/auguste"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
